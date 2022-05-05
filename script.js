@@ -1,11 +1,10 @@
-'use strict';
 const selectBtn = document.querySelector('#select');
 
 const createCard = (item) => {
     const cards = document.querySelector('.content');
     const card = document.createElement('div');
 
-    card.innerHTML = `<div class="card-container">
+    card.innerHTML = `
         <div class="card">
             <img src="${item.photo}" alt="superhero_photo" />
             <h1 class="name title-name"><span>${item.name}</h1>
@@ -19,8 +18,7 @@ const createCard = (item) => {
                 <div class="title deathDay">Deathday: <span>${item.deathDay}</span></div>
                 <div class="title status">Status: <span>${item.status}</span></div>
             </div>
-        </div>
-    </div>`;
+        </div>`;
     cards.appendChild(card);
 }
 
@@ -28,18 +26,23 @@ const createCard = (item) => {
 fetch('./dbHeroes.json')
     .then(res => res.json())
     .then(result => result.forEach(item => createCard(item)))
-    .then(data => {
-        let cardsArray = document.querySelectorAll('.card');
-        selectBtn.addEventListener('change', () => {
-            
-            cardsArray.forEach(card => {
-                card.style.display = 'flex';
-                
-                if (card.innerHTML.indexOf(select.value) === -1) {
-                    card.style.display = 'none';
-                }
-            })
-        })
-    })
     .catch(error => console.log(error.message));
 
+selectBtn.addEventListener('change', (e) => {
+
+    const cards = document.querySelector('.content');
+    cards.innerHTML = '';
+    fetch('./dbHeroes.json')
+        .then(res => res.json())
+        .then(result => result.forEach(item => {
+            if (item.movies) {
+                if (item.movies.includes(e.target.value)) {
+                    createCard(item);
+                }
+            }
+            if (e.target.value === '') {
+                createCard(item);
+            }
+        }))
+        .catch(error => console.log(error.message));
+})

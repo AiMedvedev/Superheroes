@@ -12,6 +12,37 @@ body {
     margin: 30px 60px; 
 }
 
+.header-title {
+    color: peachpuff;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+select {
+    appearance: none;
+    cursor: pointer;
+    background-color: transparent;
+    color:peachpuff;
+    border-radius: 10px;
+    text-align: center;
+    width: fit-content;
+    appearance: none;
+    outline: none;
+    overflow-y: auto;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+option {
+    color:peachpuff;
+    cursor: pointer;
+    background-color: #24282f;
+}
+
+
 .content {
 	display: flex;
 	justify-content: center;
@@ -22,34 +53,13 @@ body {
     row-gap: 35px;
 }
 
-.header-title {
-    color: peachpuff;
-    font-size: 30px;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-select {
-    background-color:peachpuff;
-}
-
-option {
-    background-color:#1c7bd0;
-    color:white;
-    margin-bottom: 4px;
-}
-
 span {
     color: peachpuff;
 }
 
-.card-container {
+.card {
 	perspective: 600px;
     position: relative;
-}
-
-.card {
-	position: relative;
 	width: 215px;
 	height: 335px;
     border-radius: 10px;
@@ -70,7 +80,6 @@ span {
 	border: none;
     z-index: -1;
     position: absolute;
-    
 }
 
 .card:hover .drawn_content {
@@ -93,17 +102,6 @@ span {
     clip-path: polygon(100% 0%, 50% 9%, 0% 10%, 0% 100%, 100% 100%);
     transition: ease-in-out 0.5s;
 }
-/* 
-.card:hover {
-	transform-origin: center top;
-	transform: rotateX(5deg) scale(102%);
-	transition: transform 0.3s;
-}
-
-.card:hover .bg {
-	transform: rotateZ(30deg) translateY(30%);
-	transition: transform 0.3s ease-out;
-} */
 
 .card:hover h1.title-name {
     opacity: 0;
@@ -121,7 +119,7 @@ h1 {
     font-size: 10px;
     color: white;
     padding: 0 10px;
-    margin-bottom: 0;  
+    margin-bottom: 3px;  
 }
 
 .status {
