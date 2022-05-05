@@ -1,0 +1,129 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: #24282f;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 60px; 
+}
+
+.content {
+	display: flex;
+	justify-content: center;
+    margin: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    row-gap: 35px;
+}
+
+.header-title {
+    color: peachpuff;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+select {
+    background-color:peachpuff;
+}
+
+option {
+    background-color:#1c7bd0;
+    color:white;
+    margin-bottom: 4px;
+}
+
+span {
+    color: peachpuff;
+}
+
+.card-container {
+	perspective: 600px;
+    position: relative;
+}
+
+.card {
+	position: relative;
+	width: 215px;
+	height: 335px;
+    border-radius: 10px;
+	box-shadow: 0px 8px 27px -5px rgba(0, 0, 0, 0.82);
+	cursor: pointer;
+	transition: transform 0.5s;
+	transform-origin: center top;
+	overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.card img {
+	width: inherit;
+	height: inherit;
+	object-fit: cover;
+	border: none;
+    z-index: -1;
+    position: absolute;
+    
+}
+
+.card:hover .drawn_content {
+    bottom: 0px;
+    transition: ease-in 0.5s;
+}
+
+.drawn_content {
+    position: absolute;
+    bottom: -200px;
+    padding-top: 25px;
+    height: 200px;
+    color: white;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    clip-path: polygon(100% 0%, 50% 9%, 0% 10%, 0% 100%, 100% 100%);
+    transition: ease-in-out 0.5s;
+}
+/* 
+.card:hover {
+	transform-origin: center top;
+	transform: rotateX(5deg) scale(102%);
+	transition: transform 0.3s;
+}
+
+.card:hover .bg {
+	transform: rotateZ(30deg) translateY(30%);
+	transition: transform 0.3s ease-out;
+} */
+
+.card:hover h1.title-name {
+    opacity: 0;
+}
+
+h1 {
+    font-size: 22px;
+    color:white;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    transition: ease-in-out 0.5s;
+}
+
+.title {
+    font-size: 10px;
+    color: white;
+    padding: 0 10px;
+    margin-bottom: 0;  
+}
+
+.status {
+    margin-bottom: 10px;
+}
