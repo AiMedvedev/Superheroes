@@ -9,17 +9,18 @@ body {
 .header-container {
     display: flex;
     justify-content: space-between;
-    margin: 30px 60px; 
+    margin: 50px 80px; 
 }
 
 .header-title {
     color: peachpuff;
-    font-size: 30px;
+    font-size: 60px;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
 select {
+    margin-left: 30px;
     appearance: none;
     cursor: pointer;
     background-color: transparent;
@@ -30,6 +31,7 @@ select {
     appearance: none;
     outline: none;
     overflow-y: auto;
+    font-size: 30px;
 }
 
 select::-ms-expand {
@@ -49,8 +51,8 @@ option {
     margin: 40px;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    row-gap: 35px;
+    gap: 35px;
+    row-gap: 50px;
 }
 
 span {
@@ -60,8 +62,8 @@ span {
 .card {
 	perspective: 600px;
     position: relative;
-	width: 215px;
-	height: 335px;
+	width: 430px;
+    height: 670px;
     border-radius: 10px;
 	box-shadow: 0px 8px 27px -5px rgba(0, 0, 0, 0.82);
 	cursor: pointer;
@@ -89,9 +91,9 @@ span {
 
 .drawn_content {
     position: absolute;
-    bottom: -200px;
-    padding-top: 25px;
-    height: 200px;
+    bottom: -400px;
+    padding-top: 35px;
+    height: 400px;
     color: white;
     width: 100%;
     height: fit-content;
@@ -108,7 +110,7 @@ span {
 }
 
 h1 {
-    font-size: 22px;
+    font-size: 40px;
     color:white;
     margin: 0 auto;
     margin-bottom: 20px;
@@ -116,10 +118,10 @@ h1 {
 }
 
 .title {
-    font-size: 10px;
+    font-size: 20px;
     color: white;
     padding: 0 10px;
-    margin-bottom: 3px;  
+    margin-bottom: 6px;  
 }
 
 .status {
